@@ -7,35 +7,37 @@ Time spent: **40** hours spent in total
 ## Pentesting Report
 
 ### 1. (Required) Vulnerability Name or ID WordPress <= 4.2.2 - Authenticated Stored Cross-Site Scripting (XSS)
-  - [ ] Summary: 
-    - Vulnerability types:
+  - [ ] Summary: XSS exploiting comments section and triggering alert script each time site loads that comment - must be an authenticated user (e.g., posted comment with user in the author role)
+    - Vulnerability types: Cross-Site Scripting (XSS)
     - Tested in version: 4.2
     - Fixed in version: 4.2.3
   - [ ] GIF Walkthrough: https://github.com/ss6422/codepath_homework/blob/workdpress/XSSAuthor.gif.gif
-  - [ ] Steps to recreate: 
+  - [ ] Steps to recreate: 1) Login as Author 2) Add XSS Script in Comments section and post 3) refresh browser and alert triggers (XSS)
   - [ ] Affected source code:
     - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
-### 2. (Required) Vulnerability Name or ID
-  - [ ] Summary: 
-    - Vulnerability types:
-    - Tested in version:
-    - Fixed in version: 
-  - [ ] GIF Walkthrough: 
-  - [ ] Steps to recreate: 
+### 2. (Required) Vulnerability Name or ID WordPress <= 5.2.3 - Unauthenticated View Private/Draft Posts
+  - [ ] Summary: IDOR - anauthenticated access to draft / unpublished content on WordPress website
+    - Vulnerability types: IDOR - Insecure Direct Object Reference
+    - Tested in version: 4.2
+    - Fixed in version: 4.2.25
+  - [ ] GIF Walkthrough: https://github.com/ss6422/codepath_homework/blob/workdpress/UnauthViewDraftPages.gif.gif
+  - [ ] Steps to recreate: 1) Created a draft post and page using an authenticated / authorized account (admin).  2) in separate browser opened unauthenticated sesssion 3) entered the insecure direct object reference in the URL which display the draft information to unauthenticated users
   - [ ] Affected source code:
     - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
 
 ## Assets
 
-List any additional assets, such as scripts or files - Mnaullay executed in Wordpress site, comments section and admin portal to exploit vulberabilities. ONly used wpscan to identify initial potential vulnerabilities to exploit
+List any additional assets, such as scripts or files - Mnaullay executed in Wordpress site, comments section and admin portal to exploit vulberabilities. 
+ONly used wpscan to identify initial potential vulnerabilities to exploit
 
 ## Resources
 
 - [WordPress Source Browser](https://core.trac.wordpress.org/browser/)
 - [WordPress Developer Reference](https://developer.wordpress.org/reference/)
+- WPScan and references links provided as exploits.
 
 GIFs created with ScreenToGIF
 
 ## Notes
 
-Describe any challenges encountered while doing the work - a lot of challenges with setup, configuration and impacted ability to test or exploit vulnerabilities
+Describe any challenges encountered while doing the work - a lot of challenges with setup, configuration and impacted ability to test or exploit vulnerabilities (e.g., getting pages to work SQL injections, etc.)
