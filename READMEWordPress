@@ -1,0 +1,41 @@
+# Project 7 - WordPress Pentesting
+
+Time spent: **40** hours spent in total
+
+> Objective: Find, analyze, recreate, and document **five vulnerabilities** affecting an old version of WordPress
+
+## Pentesting Report
+
+### 1. (Required) Vulnerability Name or ID WordPress <= 4.2.2 - Authenticated Stored Cross-Site Scripting (XSS)
+  - [ ] Summary: 
+    - Vulnerability types:
+    - Tested in version: 4.2
+    - Fixed in version: 4.2.3
+  - [ ] GIF Walkthrough: 
+  - [ ] Steps to recreate: 
+  - [ ] Affected source code:
+    - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
+### 2. (Required) Vulnerability Name or ID
+  - [ ] Summary: 
+    - Vulnerability types:
+    - Tested in version:
+    - Fixed in version: 
+  - [ ] GIF Walkthrough: 
+  - [ ] Steps to recreate: 
+  - [ ] Affected source code:
+    - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
+
+## Assets
+
+List any additional assets, such as scripts or files - Mnaullay executed in Wordpress site, comments section and admin portal to exploit vulberabilities. ONly used wpscan to identify initial potential vulnerabilities to exploit
+
+## Resources
+
+- [WordPress Source Browser](https://core.trac.wordpress.org/browser/)
+- [WordPress Developer Reference](https://developer.wordpress.org/reference/)
+
+GIFs created with ScreenToGIF
+
+## Notes
+
+Describe any challenges encountered while doing the work - a lot of challenges with setup, configuration and impacted ability to test or exploit vulnerabilities
