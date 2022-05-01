@@ -7,40 +7,44 @@
 ### MHN-Admin Deployment (Required)
 
 **Summary:** How did you deploy it? Did you use GCP, AWS, Azure, Vagrant, VirtualBox, etc.?
-Deployed using GCP Free Tier using the cloud shell. Following codepath steps, first configured / set the firewall rules to allow traffic from http (internet), honeymap, and hpfeeds.  Then, created the MHN Admin VM instance per specs and SSH'd into the VM newly created.  Then, installed the MHN Admin application following instructions and configurations.
+Deployed using GCP Free Tier using the cloud shell. Following codepath steps, first configured / set the firewall rules to allow traffic from http (internet), honeymap, and hpfeeds.  Then, created the MHN Admin VM instance per specs and SSH'd into the VM newly created.  Then, installed the MHN Admin application following instructions and configurations.  The use of the MNH Admin portal is evidenced in later steps and screenshots, this covers the setup and app installation on the VM.
 <img src="Milestones 0 Through 2.gif">
 
 ### Dionaea Honeypot Deployment (Required)
-**Summary:** Briefly in your own words, what does dionaea do?
-
-<img src="dionaea-honeypot.gif">
+**Summary:** Briefly in your own words, what does dionaea do? 
+Dionaea is a low interaction honeypot using python scripting designed to capture activity, tactics, and attacks (malware or payloads attempted).  This is the initial setup and configuration of the specific honeypot type - later steps show the actual attacks and activity captured, especially the final session database export.
+<img src="Milestones 3 and 4 Dionaea.gif">
 
 ### Database Backup (Required) 
-
 **Summary:** What is the RDBMS that MHN-Admin uses? What information does the exported JSON file record?
-
-*Be sure to upload session.json directly to this GitHub repo/branch in order to get full credit.*
+Based on the commands used to export the MHN-Admin data ('mongoexport') it is clear the RDBMS in use is MongoDB database.  The exported JSON file record contains all the attacks activity captured from all of the honeypots up and running (capturing the protocol, ip address, ports, time, identifiers and specific honeypot where it was captured).
+<img src="Final Database Export.gif">
+*Be sure to upload session.json directly to this GitHub repo/branch in order to get full credit.* <img src="session.json.gif">
 
 ### Deploying Additional Honeypot(s) (Optional)
-
-#### X Honeypot
-
+#### Conpot, Snort, Cowrie, and Shockpot Honeypots Added
 **Summary:** What does this honeypot simulate and do for a security researcher?
-
-<img src="x-honeypot.gif">
+Cowrie provides a bit more interaction capability honeypot (medium interactive) with SSH and Telnet used to focus on logging brute force and shell interaction based attacks.
+Conpot is low interaction honeypot designed to simulate Industrial Systems to capture activity, tactics, and attacks. 
+Snort is an Intrusion Prevention system used for logging and real-time traffic analysis
+Shockpot is a web app honeypot focused on remote code vulnerabilities and execution attacks and activity.
+***Each honeypot is configured and designed differently to simulate certain systems or conditions of interest to researcher or company - to see threat activity and attacks targeted at the honeypot.
+<img src="Milestone 6 Cowrie Honeypot.gif">
 
 ### Malware Capture and Identification (Optional)
-
-#### X Malware
-
+#### WannaCry Malware
 **Summary:** How did you find it? Which honeypot captured it? What does each malware do?
-
-MD5 Hash: *Run `md5sum` on the file and record the hash here.*
-
-SHA1 Hash: *Run `sha1sum` on the file and record the hash here.*
-
-<img src="x-malware.gif">
+I found the malware by going to the 'Payloads' tab of the MHN Server and filtering on the dionaea.capture and noted one payload that was captured on the Dionaea Honeypot VM.  Then, went to virus total website and searched on the md5sum and noted that it belonged to the WannaCry malware.  WannaCry is a ransomware malware that encrypts files on a server or machine and require crypto payment to obtain the decryption of the files. 
+MD5 Hash: *Run `md5sum` on the file and record the hash here.*45735a816370f26b06e053656ca7315d
+SHA1 Hash: *Run `sha1sum` on the file and record the hash here.*56c58c30159a2b3a5d509fbacd608eb5e317757a84f87350f84e8fb791713129213a6cbb5e2b69aa47c9fb87576e5b70229c85ee7213cadcb97efd1a4787e98d
+<img src="Milestone 7 Dionaea Honeypot - WannaCryMalware.gif">
 
 ## Notes
+Other Files Uploaded as SUpporting Evidence:
+1)session.json
+2)Final Database Export.gif
+3)MHN Server Walkthrough_Final.gif
+
 
 Describe any challenges encountered while doing the assignment.
+The directions were well laid out and fairly easy to understand for a relatively complex assignment 
