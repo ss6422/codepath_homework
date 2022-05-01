@@ -7,11 +7,10 @@
 ### MHN-Admin Deployment (Required)
 
 **Summary:** How did you deploy it? Did you use GCP, AWS, Azure, Vagrant, VirtualBox, etc.?
-
-<img src="mhn-admin.gif">
+Deployed using GCP Free Tier using the cloud shell. Following codepath steps, first configured / set the firewall rules to allow traffic from http (internet), honeymap, and hpfeeds.  Then, created the MHN Admin VM instance per specs and SSH'd into the VM newly created.  Then, installed the MHN Admin application following instructions and configurations.
+<img src="Milestones 0 Through 2.gif">
 
 ### Dionaea Honeypot Deployment (Required)
-
 **Summary:** Briefly in your own words, what does dionaea do?
 
 <img src="dionaea-honeypot.gif">
